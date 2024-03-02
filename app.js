@@ -1,15 +1,22 @@
 
 let num = Math.random()*11;
 let x,y;
+let round=0;
 
 function guest_click(){
     y=Number(Math.floor(Math.random()*11));
     x=Number(document.getElementById("text").value);
     console.log(typeof x);
-    if(x==0){
-        alert(y+"You WIN");
+    round++;
+    if(round<=3){
+        if(x==y){
+            alert(y+" You WIN");
+        }else{
+            alert(y+" You Loss.. Please Try again");
+            document.getElementById("text").value="";
+        }
     }else{
-        alert(y+"wrone");
+        alert("Game Over")
     }
     
 }
