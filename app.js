@@ -8,7 +8,7 @@ function guest_click(){
     x=Number(document.getElementById("text").value);
     console.log(typeof x);
     round++;
-    if(round<=3){
+    if(round<3){
         if(x==y){
             alert(y+" You WIN");
         }else{
@@ -16,7 +16,13 @@ function guest_click(){
             document.getElementById("text").value="";
         }
     }else{
-        alert("Game Over")
+        if(x==y){
+            alert(y+" You WIN");
+        }else{
+            alert(y+"  You Loss...\nGame Over")
+            document.getElementById("text").value="";
+        }
+        
     }
     
 }
